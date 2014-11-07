@@ -1,0 +1,4 @@
+#!/bin/sh
+	/etc/init.d/qos_gargoyle enable
+	exit 0
+}

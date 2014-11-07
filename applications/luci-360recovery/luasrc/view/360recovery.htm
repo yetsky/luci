@@ -1,0 +1,46 @@
+<%#
+LuCI - Lua Configuration Interface
+Copyright 2008 Steven Barth <steven@midlink.org>
+Copyright 2008 Jo-Philipp Wich <xm@leipzig.freifunk.net>
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+	http://www.apache.org/licenses/LICENSE-2.0
+
+$Id$
+
+-%>
+
+<%+header%>
+
+<ul class="cbi-tabmenu">
+	<li class="cbi-tab"><a href="#"><%:Actions%></a></li>
+</ul>
+
+<fieldset class="cbi-section">
+
+
+	<fieldset class="cbi-section">
+		<legend><%:Flash new firmware image%></legend>
+			<form method="post" action="<%=REQUEST_URI%>" enctype="multipart/form-data">
+				<div class="cbi-section-descr">上传一个360官方加密固件以恢复到原厂系统。</div>
+				<div class="cbi-section-node">
+					<div class="cbi-value cbi-value-last<% if image_invalid then %> cbi-value-error<% end %>">
+						<label class="cbi-value-title" for="image"><%:Image%>:</label>
+						<div class="cbi-value-field">
+							<input type="file" name="image" id="image" />
+							<input type="submit" class="cbi-button cbi-input-apply" value="<%:Flash image...%>" />
+						</div>
+					</div>
+				</div>
+				<% if image_invalid then %>
+					<div class="cbi-section-error"><%:The uploaded image file does not contain a supported format. Make sure that you choose the generic image format for your platform. %></div>
+				<% end %>
+			</form>
+	</fieldset>
+
+</fieldset>
+
+<%+footer%>
