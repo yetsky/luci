@@ -264,9 +264,9 @@ $(eval $(call application,commands,LuCI Shell Command Module))
 	+PACKAGE_luci-app-qos_gargoyle:gargoyle-firewall-util +PACKAGE_luci-app-qos_gargoyle:libericstools +PACKAGE_luci-app-qos_gargoyle:libiptbwctl +PACKAGE_luci-app-qos_gargoyle:qos-gargoyle))
 
 $(eval $(call application,macvlan-multiwan,LuCI Support for macvlan with multiwan,\
-	+PACKAGE_luci-app-macvlan-multiwan:kmod-macvlan +PACKAGE_luci-app-macvlan-multiwan:luci-app-multiwan))
+	+PACKAGE_luci-app-macvlan-multiwan:kmod-macvlan))
 $(eval $(call application,macvlan,LuCI Support for macvlan,\
-	+PACKAGE_luci-app-macvlan:kmod-macvlan +PACKAGE_luci-app-macvlan:luci-app-mwan3))
+	+PACKAGE_luci-app-macvlan:kmod-macvlan))
 $(eval $(call application,vsftpd,FTP Server,\
 	+PACKAGE_luci-app-vsftpd:vsftpd-pam))
 $(eval $(call application,filebrowser,File browser tool module,\
